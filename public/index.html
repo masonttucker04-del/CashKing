@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HomeQuick Cash Buyers | We Buy Houses for Cash in Ardmore, OK</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="HomeQuick Cash Buyers purchases houses for cash in Ardmore, Oklahoma. No repairs, no fees, fast closing. Get a cash offer today."
+  />
+  <style>
+    :root {
+      --primary: #0b3d91;
+      --primary-dark: #052862;
+      --accent: #f6b10c;
+      --accent-dark: #d99900;
+      --bg: #f5f7fb;
+      --text: #1f2933;
+      --muted: #6b7280;
+      --border: #e2e8f0;
+      --white: #ffffff;
+      --danger: #dc2626;
+      --radius-lg: 14px;
+      --radius-xl: 20px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.18);
+      --shadow-card: 0 10px 25px rgba(15, 23, 42, 0.08);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      color: var(--text);
+      background-color: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* Layout / Nav */
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.7rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: radial-gradient(circle at 30% 15%, #ffffff, #0b3d91);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f9fafb;
+      font-size: 0.8rem;
+      font-weight: 800;
+      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.35);
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .logo-text-sub {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .nav-center {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-center a {
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      color: var(--muted);
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .nav-center a:hover {
+      background: rgba(11, 61, 145, 0.06);
+      color: var(--primary-dark);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-size: 0.85rem;
+    }
+
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+    }
+
+    .nav-phone span:first-child {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.55rem 1.2rem;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease, color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #111827;
+      box-shadow: var(--shadow-card);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: var(--accent-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--primary-dark);
+    }
+
+    .btn-outline:hover {
+      background: rgba(11, 61, 145, 0.04);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      padding: 0.3rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: #0f172a;
+      margin: 3px 0;
+    }
+
+    @media (max-width: 880px) {
+      .nav-center,
+      .nav-right {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-center.open,
+      .nav-right.open {
+        display: flex;
+      }
+
+      .nav-center.open {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 0.75rem 1.25rem;
+        background: #ffffff;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        z-index: 30;
+      }
+
+      .nav-right.open {
+        position: absolute;
+        top: calc(100% + 150px);
+        left: 0;
+        right: 0;
+        padding: 0 1.25rem 0.75rem;
+        background: #ffffff;
+        border-bottom: 1px solid var(--border);
+        justify-content: flex-start;
+      }
+
+      header {
+        position: sticky;
+      }
+    }
+
+    main {
+      flex: 1;
+    }
+
+    section {
+      padding: 3rem 1.25rem;
+    }
+
+    .section-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.4rem;
+      text-align: center;
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      text-align: center;
+      max-width: 40rem;
+      margin: 0 auto 2rem;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 3rem 1.25rem 3.5rem;
+      background: radial-gradient(circle at top left, #345ea8, #0b3d91);
+      color: #ffffff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "+ + + + +";
+      position: absolute;
+      top: -40px;
+      left: 10%;
+      font-size: 1.4rem;
+      letter-spacing: 0.8rem;
+      opacity: 0.14;
+    }
+
+    .hero::after {
+      content: "+ + + + +";
+      position: absolute;
+      bottom: -40px;
+      right: 12%;
+      font-size: 1.4rem;
+      letter-spacing: 0.8rem;
+      opacity: 0.14;
+    }
+
+    .hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2.2rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.9;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 3vw, 2.8rem);
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span.highlight {
+      color: var(--accent);
+    }
+
+    .hero-city {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
+      max-width: 32rem;
+      opacity: 0.95;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-size: 0.83rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      opacity: 0.95;
+    }
+
+    .hero-badge-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .hero-form-card {
+      background-color: #ffffff;
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+      padding: 1.6rem 1.5rem;
+      color: #111827;
+    }
+
+    .hero-form-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-form-subtitle {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem 0.75rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .form-row-full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 0.16rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.45rem 0.7rem;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font: inherit;
+      background-color: #f9fafb;
+      outline: none;
+      transition: border 0.15s ease, box-shadow 0.15s ease,
+        background 0.15s ease;
+      font-size: 0.87rem;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(11, 61, 145, 0.3);
+      background-color: #ffffff;
+    }
+
+    textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+
+    .form-footnote {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    .flash {
+      font-size: 0.78rem;
+      margin-top: 0.4rem;
+      display: none;
+    }
+
+    .flash-success {
+      color: #15803d;
+    }
+
+    .flash-error {
+      color: var(--danger);
+    }
+
+    @media (max-width: 880px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* How it works */
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .step-card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 1rem 1rem 1.1rem;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+
+    .step-number-pill {
+      position: absolute;
+      top: -12px;
+      left: 1rem;
+      background-color: var(--accent);
+      color: #111827;
+      font-size: 0.7rem;
+      padding: 0.15rem 0.55rem;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .step-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background-color: rgba(11, 61, 145, 0.06);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .step-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-text {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 880px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Testimonials */
+
+    .testimonials {
+      background-color: #ffffff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .testimonial-card {
+      background-color: #ffffff;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 1.2rem 1.1rem;
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.05);
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 0.85rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .testimonial-name {
+      margin-top: 0.6rem;
+      font-weight: 600;
+      font-size: 0.82rem;
+      color: #111827;
+    }
+
+    .testimonial-location {
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 880px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Sell section + why sell */
+
+    .sell-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .sell-bullets {
+      list-style: none;
+      padding: 0;
+      margin: 1.2rem 0 1.4rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .sell-bullets li {
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+
+    .check-icon {
+      margin-top: 0.15rem;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background-color: rgba(34, 197, 94, 0.1);
+      color: #16a34a;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+
+    .sell-form-card {
+      background-color: #ffffff;
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+      padding: 1.6rem 1.5rem;
+    }
+
+    .why-grid {
+      margin-top: 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .why-card {
+      background-color: #ffffff;
+      border-radius: 14px;
+      padding: 1rem 1rem 1.1rem;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+    }
+
+    .why-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      background-color: rgba(11, 61, 145, 0.06);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .why-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #111827;
+    }
+
+    @media (max-width: 880px) {
+      .sell-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sell-bullets {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Properties */
+
+    .properties-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .chip-group {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    .chip {
+      padding: 0.3rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background-color: #ffffff;
+      cursor: pointer;
+      font-size: 0.82rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .chip.active {
+      background-color: var(--primary);
+      border-color: var(--primary);
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    .price-filter {
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .property-card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+    }
+
+    .property-image-wrap {
+      position: relative;
+    }
+
+    .property-image {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .property-status-pill {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 0.15rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .status-sale {
+      background-color: #bbf7d0;
+    }
+
+    .status-rent {
+      background-color: #bfdbfe;
+    }
+
+    .status-under {
+      background-color: #fef9c3;
+    }
+
+    .property-body {
+      padding: 0.9rem 1rem 0.9rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .property-price {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #111827;
+    }
+
+    .property-address {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .property-meta {
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      display: flex;
+      gap: 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .property-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+
+    .property-footer {
+      padding: 0.75rem 1rem 0.9rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .property-tag {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .btn-sm {
+      padding: 0.38rem 0.95rem;
+      font-size: 0.82rem;
+    }
+
+    #propertiesEmpty {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 880px) {
+      .properties-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .properties-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* About section */
+
+    .about-hero {
+      background-color: #0b3d91;
+      color: #ffffff;
+      padding: 2.5rem 1.25rem 2.8rem;
+    }
+
+    .about-hero-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .about-hero-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-hero-text {
+      font-size: 0.95rem;
+      max-width: 36rem;
+      opacity: 0.96;
+    }
+
+    .about-body {
+      background-color: #ffffff;
+      padding: 3rem 1.25rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-grid {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1.1fr;
+      gap: 2.2rem;
+    }
+
+    .about-heading {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .values-grid {
+      margin-top: 1.6rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .value-card {
+      background-color: #f9fafb;
+      border-radius: 14px;
+      padding: 1rem 1rem 1.1rem;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .value-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+      color: #111827;
+    }
+
+    .situations-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.4rem 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .quote-card {
+      margin-top: 1.5rem;
+      background-color: #f9fafb;
+      border-radius: 16px;
+      padding: 1.1rem 1.1rem;
+      border: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .quote-author {
+      margin-top: 0.6rem;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.82rem;
+      color: #111827;
+    }
+
+    @media (max-width: 880px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .situations-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Contact */
+
+    .contact-section {
+      background-color: #f9fafb;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.3fr;
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .contact-card-small {
+      background-color: #ffffff;
+      border-radius: 14px;
+      padding: 1rem 1rem 1.1rem;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .contact-card-small-title {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #111827;
+    }
+
+    .contact-form-card {
+      background-color: #ffffff;
+      border-radius: 18px;
+      padding: 1.7rem 1.6rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-form-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-form-card p {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 880px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Footer */
+
+    footer {
+      background-color: var(--primary-dark);
+      color: #e5e7eb;
+      padding: 2.2rem 1.25rem 1.6rem;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1.1fr;
+      gap: 1.5rem;
+      font-size: 0.86rem;
+    }
+
+    .footer-logo {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+    }
+
+    .footer-logo-text-main {
+      font-weight: 700;
+      font-size: 0.96rem;
+    }
+
+    .footer-logo-text-sub {
+      font-size: 0.8rem;
+      color: #cbd5f5;
+      margin-top: 0.2rem;
+    }
+
+    .footer-heading {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-link {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: #dbeafe;
+      font-size: 0.83rem;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      margin-top: 1.5rem;
+      font-size: 0.78rem;
+      color: #9ca3c5;
+      text-align: center;
+      border-top: 1px solid rgba(148, 163, 208, 0.35);
+      padding-top: 0.9rem;
+    }
+
+    @media (max-width: 880px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- NAV -->
+    <header>
+      <div class="nav">
+        <div class="nav-left">
+          <div class="logo-icon">HQ</div>
+          <div>
+            <div class="logo-text-main">HomeQuick Cash Buyers</div>
+            <div class="logo-text-sub">Ardmore, Oklahoma</div>
+          </div>
+        </div>
+
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-center" id="navCenter">
+  <a href="index.html">Home</a>
+  <a href="sell.html">Sell Your House</a>
+  <a href="properties.html">Properties</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+
+        <div class="nav-right" id="navRight">
+          <div class="nav-phone">
+            <span>📞</span>
+            <span>(000) 000-0000</span>
+          </div>
+          <button class="btn btn-primary" data-scroll-to="#sell">
+            Get Cash Offer
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-eyebrow">We buy houses for cash</div>
+            <h1>We Buy Houses for Cash in <span class="highlight">Ardmore</span></h1>
+            <div class="hero-city">Ardmore, Oklahoma</div>
+            <p class="hero-text">
+              Get a fair, no-obligation cash offer for your house today. Sell fast, skip the
+              hassle, and close on your timeline.
+            </p>
+            <div class="hero-badges">
+              <div class="hero-badge">
+                <span class="hero-badge-icon">✓</span>
+                <span>No repairs needed</span>
+              </div>
+              <div class="hero-badge">
+                <span class="hero-badge-icon">✓</span>
+                <span>Close in 7–14 days</span>
+              </div>
+              <div class="hero-badge">
+                <span class="hero-badge-icon">✓</span>
+                <span>Zero fees or commissions</span>
+              </div>
+              <div class="hero-badge">
+                <span class="hero-badge-icon">✓</span>
+                <span>Any condition accepted</span>
+              </div>
+            </div>
+            <div class="hero-cta-row">
+              <button class="btn btn-primary" data-scroll-to="#sell">
+                Get My Cash Offer
+              </button>
+              <button class="btn btn-outline" data-scroll-to="#properties">
+                View Available Properties
+              </button>
+            </div>
+            <div class="hero-note">
+              No obligation, no pressure. Just an honest cash offer so you can decide what’s
+              best.
+            </div>
+          </div>
+
+          <div class="hero-form-card">
+            <div class="hero-form-title">Get Your Free Cash Offer</div>
+            <div class="hero-form-subtitle">
+              Tell us a bit about your property and we’ll follow up with a quick call or text.
+            </div>
+            <form id="cashOfferForm">
+              <div class="form-grid">
+                <div>
+                  <label for="offerName">Full Name *</label>
+                  <input id="offerName" name="name" required placeholder="John Smith" />
+                </div>
+                <div>
+                  <label for="offerPhone">Phone *</label>
+                  <input
+                    id="offerPhone"
+                    name="phone"
+                    required
+                    placeholder="(000) 000-0000"
+                  />
+                </div>
+                <div class="form-row-full">
+                  <label for="offerEmail">Email</label>
+                  <input
+                    id="offerEmail"
+                    name="email"
+                    type="email"
+                    placeholder="john@example.com"
+                  />
+                </div>
+                <div class="form-row-full">
+                  <label for="offerAddress">Property Address *</label>
+                  <input
+                    id="offerAddress"
+                    name="address"
+                    required
+                    placeholder="123 Main St, Ardmore, OK"
+                  />
+                </div>
+                <div>
+                  <label for="offerType">Property Type</label>
+                  <select id="offerType" name="type">
+                    <option value="Single-family">Single-family</option>
+                    <option value="Duplex">Duplex</option>
+                    <option value="Triplex / Fourplex">Triplex / Fourplex</option>
+                    <option value="Mobile Home">Mobile Home</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="offerCondition">Property Condition</label>
+                  <select id="offerCondition" name="condition">
+                    <option value="">Select condition...</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Fair">Fair</option>
+                    <option value="Needs Work">Needs Work</option>
+                    <option value="Major Repairs Needed">Major Repairs Needed</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="offerBeds">Beds</label>
+                  <input
+                    id="offerBeds"
+                    name="beds"
+                    type="number"
+                    min="0"
+                    step="1"
+                    placeholder="3"
+                  />
+                </div>
+                <div>
+                  <label for="offerBaths">Baths</label>
+                  <input
+                    id="offerBaths"
+                    name="baths"
+                    type="number"
+                    min="0"
+                    step="0.5"
+                    placeholder="2"
+                  />
+                </div>
+                <div class="form-row-full">
+                  <label for="offerNotes">Additional Notes</label>
+                  <textarea
+                    id="offerNotes"
+                    name="notes"
+                    placeholder="Tell us more about your property or situation..."
+                  ></textarea>
+                </div>
+              </div>
+              <button class="btn btn-primary btn-sm" type="submit">
+                Get My Free Cash Offer
+              </button>
+              <div class="form-footnote">
+                Your information is secure and never shared. We only use it to prepare your
+                offer.
+              </div>
+              <div id="cashOfferFlash" class="flash"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section>
+        <div class="section-inner">
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-subtitle">
+            Selling your house for cash is simple. Here’s our straightforward 4-step process.
+          </p>
+          <div class="steps-grid">
+            <div class="step-card">
+              <div class="step-number-pill">Step 1</div>
+              <div class="step-icon">📄</div>
+              <div class="step-title">Submit Your Property</div>
+              <div class="step-text">
+                Fill out our simple form with your property details. It usually takes less than
+                two minutes.
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-number-pill">Step 2</div>
+              <div class="step-icon">💵</div>
+              <div class="step-title">Get a Cash Offer</div>
+              <div class="step-text">
+                We’ll review your property and send you a fair, no-obligation cash offer—often
+                within 24 hours.
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-number-pill">Step 3</div>
+              <div class="step-icon">📅</div>
+              <div class="step-title">Choose Your Closing Date</div>
+              <div class="step-text">
+                Accept our offer and pick a closing date that works for you—as fast as 7 days.
+              </div>
+            </div>
+            <div class="step-card">
+              <div class="step-number-pill">Step 4</div>
+              <div class="step-icon">✅</div>
+              <div class="step-title">Get Paid</div>
+              <div class="step-text">
+                Close on your timeline and walk away with cash in hand. No repairs, no fees, no
+                surprises.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="testimonials">
+        <div class="section-inner">
+          <h2 class="section-title">What Our Sellers Say</h2>
+          <p class="section-subtitle">
+            We’ve helped homeowners sell their properties quickly and stress-free.
+          </p>
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                “I needed to sell my inherited property quickly and didn’t have time for
+                repairs. They gave me a fair offer and closed in just 10 days. Couldn’t be
+                happier!”
+              </p>
+              <div class="testimonial-name">Maria G.</div>
+              <div class="testimonial-location">East Ardmore</div>
+            </div>
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                “After going through a divorce, I needed to sell fast. The process was smooth,
+                professional, and stress-free. They handled everything.”
+              </p>
+              <div class="testimonial-name">Robert T.</div>
+              <div class="testimonial-location">South Ardmore</div>
+            </div>
+            <div class="testimonial-card">
+              <div class="stars">★★★★★</div>
+              <p>
+                “I was facing foreclosure and thought I had no options. They helped me avoid
+                foreclosure and move on with my life.”
+              </p>
+              <div class="testimonial-name">Jennifer L.</div>
+              <div class="testimonial-location">Near Downtown Ardmore</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-logo">
+              <div class="logo-icon">HQ</div>
+              <div>
+                <div class="footer-logo-text-main">HomeQuick Cash Buyers</div>
+                <div class="footer-logo-text-sub">
+                  Your trusted local cash home buyer in Ardmore, OK. Fast closings, fair offers,
+                  no hassle.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="footer-heading">Quick Links</div>
+            <a href="#hero" class="footer-link">Home</a>
+            <a href="#sell" class="footer-link">Sell Your House</a>
+            <a href="#properties" class="footer-link">Available Properties</a>
+            <a href="#about-top" class="footer-link">About Us</a>
+            <a href="#contact" class="footer-link">Contact</a>
+          </div>
+          <div>
+            <div class="footer-heading">We Buy</div>
+            <div class="footer-link">Single Family Homes</div>
+            <div class="footer-link">Condos &amp; Townhomes</div>
+            <div class="footer-link">Small Multifamily</div>
+            <div class="footer-link">Distressed Properties</div>
+            <div class="footer-link">Inherited Properties</div>
+          </div>
+          <div>
+            <div class="footer-heading">Contact Us</div>
+            <div class="footer-link">(000) 000-0000</div>
+            <div class="footer-link">info@homequickcash.com</div>
+            <div class="footer-link">Ardmore, OK</div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          © <span id="year"></span> HomeQuick Cash Buyers. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Mobile nav
+    const navToggle = document.querySelector(".nav-toggle");
+    const navCenter = document.getElementById("navCenter");
+    const navRight = document.getElementById("navRight");
+
+    if (navToggle) {
+      navToggle.addEventListener("click", () => {
+        navCenter.classList.toggle("open");
+        navRight.classList.toggle("open");
+      });
+    }
+
+    // Smooth scroll
+    document.querySelectorAll("[data-scroll-to]").forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        const target = btn.getAttribute("data-scroll-to");
+        const el = document.querySelector(target);
+        if (!el) return;
+        e.preventDefault();
+        const yOffset = -70;
+        const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      });
+    });
+
+    // Properties + filters (from backend)
+    let properties = [];
+    const grid = document.getElementById("propertiesGrid");
+    const emptyState = document.getElementById("propertiesEmpty");
+    const chips = document.querySelectorAll(".chip[data-filter]");
+    const priceFilter = document.getElementById("priceFilter");
+
+    function statusClass(status) {
+      if (status === "For Rent") return "property-status-pill status-rent";
+      if (status === "For Sale") return "property-status-pill status-sale";
+      if (status === "Under Contract") return "property-status-pill status-under";
+      return "property-status-pill";
+    }
+
+    function formatPrice(price, status) {
+      if (!price) return "";
+      const num = Number(price);
+      if (status === "For Rent") return `$${num.toLocaleString()}/month`;
+      return `$${num.toLocaleString()}`;
+    }
+
+    function parsePriceFilter(value) {
+      if (value === "all") return [0, Infinity];
+      const [min, max] = value.split("-").map(Number);
+      return [min, max];
+    }
+
+    function renderProperties() {
+      if (!grid || !emptyState) return;
+
+      const activeChip = document.querySelector(".chip.active");
+      const statusFilter = activeChip ? activeChip.getAttribute("data-filter") : "all";
+      const [minPrice, maxPrice] = parsePriceFilter(priceFilter.value);
+
+      const filtered = properties.filter((p) => {
+        const statusMatch =
+          statusFilter === "all" ? true : p.status === statusFilter;
+        const price = Number(p.price || 0);
+        const priceMatch = price >= minPrice && price <= maxPrice;
+        return statusMatch && priceMatch;
+      });
+
+      grid.innerHTML = "";
+
+      if (filtered.length === 0) {
+        emptyState.style.display = "block";
+        return;
+      } else {
+        emptyState.style.display = "none";
+      }
+
+      filtered.forEach((p) => {
+        const card = document.createElement("article");
+        card.className = "property-card";
+        card.innerHTML = `
+          <div class="property-image-wrap">
+            <img src="${p.image || ""}" alt="${p.title}" class="property-image" />
+            <div class="${statusClass(p.status)}">${p.status || ""}</div>
+          </div>
+          <div class="property-body">
+            <div class="property-price">${formatPrice(p.price, p.status)}</div>
+            <div class="property-address">${p.title || ""}</div>
+            <div class="property-address">${p.address || ""} ${p.city || ""}</div>
+            <div class="property-meta">
+              <span>${p.beds || 0} beds</span>
+              <span>${p.baths || 0} baths</span>
+              <span>${p.sqft || 0} sqft</span>
+            </div>
+            <div class="property-desc">${p.description || ""}</div>
+          </div>
+          <div class="property-footer">
+            <div class="property-tag">${p.tag || ""}</div>
+            <button class="btn btn-outline btn-sm" data-property="${p.id}">
+              Request Info
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    async function loadProperties() {
+      try {
+        const res = await fetch("/api/properties");
+        if (!res.ok) throw new Error("Failed to load properties");
+        properties = await res.json();
+        renderProperties();
+      } catch (err) {
+        console.error("Error loading properties:", err);
+      }
+    }
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        chips.forEach((c) => c.classList.remove("active"));
+        chip.classList.add("active");
+        renderProperties();
+      });
+    });
+
+    if (priceFilter) {
+      priceFilter.addEventListener("change", renderProperties);
+    }
+
+    // Request Info -> prefill contact form
+    if (grid) {
+      grid.addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-property]");
+        if (!btn) return;
+        const id = Number(btn.getAttribute("data-property"));
+        const property = properties.find((p) => p.id === id);
+        if (!property) return;
+        const message = document.getElementById("contactMessage");
+        const contactSection = document.getElementById("contact");
+        if (message) {
+          message.value = `I'm interested in "${property.title}" at ${property.address}, ${property.city || ""}. Please send me more information.`;
+        }
+        if (contactSection) {
+          const yOffset = -70;
+          const y =
+            contactSection.getBoundingClientRect().top +
+            window.pageYOffset +
+            yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      });
+    }
+
+    // Generic lead sender
+    async function sendLead(payload, flashEl) {
+      try {
+        const res = await fetch("/api/leads", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error("Request failed");
+        flashEl.style.display = "block";
+        flashEl.className = "flash flash-success";
+        flashEl.textContent =
+          "Thank you! Your information has been received. We’ll follow up soon.";
+        setTimeout(() => {
+          flashEl.style.display = "none";
+        }, 4000);
+      } catch (err) {
+        console.error(err);
+        flashEl.style.display = "block";
+        flashEl.className = "flash flash-error";
+        flashEl.textContent = "Something went wrong. Please try again.";
+        setTimeout(() => {
+          flashEl.style.display = "none";
+        }, 4000);
+      }
+    }
+
+    // Forms -> backend
+    const cashOfferForm = document.getElementById("cashOfferForm");
+    const cashOfferFlash = document.getElementById("cashOfferFlash");
+    if (cashOfferForm && cashOfferFlash) {
+      cashOfferForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const fd = new FormData(cashOfferForm);
+        const payload = {
+          kind: "cash-offer",
+          name: fd.get("name"),
+          phone: fd.get("phone"),
+          email: fd.get("email"),
+          address: fd.get("address"),
+          message: fd.get("notes")
+        };
+        cashOfferForm.reset();
+        sendLead(payload, cashOfferFlash);
+      });
+    }
+
+    const sellForm = document.getElementById("sellForm");
+    const sellFlash = document.getElementById("sellFlash");
+    if (sellForm && sellFlash) {
+      sellForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const fd = new FormData(sellForm);
+        const payload = {
+          kind: "sell-form",
+          name: fd.get("name"),
+          phone: fd.get("phone"),
+          email: fd.get("email"),
+          address: fd.get("address"),
+          message: fd.get("situation")
+        };
+        sellForm.reset();
+        sendLead(payload, sellFlash);
+      });
+    }
+
+    const contactForm = document.getElementById("contactForm");
+    const contactFlash = document.getElementById("contactFlash");
+    if (contactForm && contactFlash) {
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const fd = new FormData(contactForm);
+        const payload = {
+          kind: "contact",
+          name: fd.get("name"),
+          phone: fd.get("phone"),
+          email: fd.get("email"),
+          address: "",
+          message: fd.get("message")
+        };
+        contactForm.reset();
+        sendLead(payload, contactFlash);
+      });
+    }
+
+    // Footer year
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+    // Initial load
+    loadProperties();
+  </script>
+</body>
+</html>
