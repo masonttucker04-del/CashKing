@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Admin Dashboard - HomeQuick Cash Buyers</title>
+  <title>Admin Dashboard - CashKing Properties </title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
@@ -44,6 +44,12 @@
     .btn-add {
       background: #0b3d91;
       color: #fff;
+    }
+
+    .btn-edit {
+      background: #f59e0b;
+      color: #fff;
+      margin-right: 0.4rem;
     }
 
     .btn-delete {
@@ -132,6 +138,8 @@
 </div>
 
 <script>
+let editingId = null; // <- track if we're editing
+
 async function loadProperties() {
   const res = await fetch("/api/properties");
   const data = await res.json();
@@ -150,6 +158,23 @@ async function loadProperties() {
       <td>${p.baths || ""}</td>
       <td>${p.sqft || ""}</td>
       <td>
+        <button
+          class="btn-edit"
+          type="button"
+          onclick="startEdit(this)"
+          data-id="${p.id}"
+          data-title="${p.title || ""}"
+          data-address="${p.address || ""}"
+          data-city="${p.city || ""}"
+          data-price="${p.price || ""}"
+          data-status="${p.status || "For Sale"}"
+          data-beds="${p.beds || ""}"
+          data-baths="${p.baths || ""}"
+          data-sqft="${p.sqft || ""}"
+          data-image="${p.image || ""}"
+        >
+          Edit
+        </button>
         <button class="btn-delete" type="button" onclick="deleteProperty(${p.id})">
           Delete
         </button>
@@ -161,7 +186,15 @@ async function loadProperties() {
 
 function toggleAddForm() {
   const form = document.getElementById("addForm");
-  form.style.display = form.style.display === "block" ? "none" : "block";
+  const isVisible = form.style.display === "block";
+
+  if (isVisible) {
+    form.style.display = "none";
+    clearForm();
+  } else {
+    form.style.display = "block";
+    clearForm(); // ensure it's in "Add" mode
+  }
 }
 
 function clearForm() {
@@ -174,6 +207,32 @@ function clearForm() {
   document.getElementById("baths").value = "";
   document.getElementById("sqft").value = "";
   document.getElementById("image").value = "";
+
+  editingId = null;
+  document.querySelector("#addForm h3").textContent = "Add Property";
+  document.querySelector("#addForm .btn-add").textContent = "Save Property";
+}
+
+// called when you click the Edit button
+function startEdit(button) {
+  const form = document.getElementById("addForm");
+  form.style.display = "block";
+
+  const d = button.dataset;
+  editingId = d.id;
+
+  document.querySelector("#addForm h3").textContent = "Edit Property";
+  document.querySelector("#addForm .btn-add").textContent = "Update Property";
+
+  document.getElementById("title").value = d.title || "";
+  document.getElementById("address").value = d.address || "";
+  document.getElementById("city").value = d.city || "";
+  document.getElementById("price").value = d.price || "";
+  document.getElementById("status").value = d.status || "For Sale";
+  document.getElementById("beds").value = d.beds || "";
+  document.getElementById("baths").value = d.baths || "";
+  document.getElementById("sqft").value = d.sqft || "";
+  document.getElementById("image").value = d.image || "";
 }
 
 async function saveProperty() {
@@ -189,14 +248,18 @@ async function saveProperty() {
     image: document.getElementById("image").value
   };
 
-  await fetch("/api/properties", {
-    method: "POST",
+  const isEditing = !!editingId;
+  const url = isEditing ? `/api/properties/${editingId}` : "/api/properties";
+  const method = isEditing ? "PUT" : "POST";
+
+  await fetch(url, {
+    method,
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newProp)
   });
 
   clearForm();
-  toggleAddForm();
+  document.getElementById("addForm").style.display = "none";
   loadProperties();
 }
 
